@@ -11,7 +11,7 @@ namespace CardGames
             Bitmap cards;
 
             cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
-			SwinGame.LoadFontNamed ("GameFont", "Chunkfive.otf", 25);
+			SwinGame.LoadFontNamed ("GameFont", "Chunkfive.otf", 24);
             SwinGame.BitmapSetCellDetails (cards, 82, 110, 13, 5, 53);      // set the cells in the bitmap to match the cards
         }
 
@@ -50,7 +50,7 @@ namespace CardGames
 		{
 			SwinGame.DrawBitmap("cardsBoard.png", 0, 0);
 			SwinGame.DrawText ("" + myGame.Score (0), Color.White, "GameFont", 0, 30);
-
+			SwinGame.DrawText ("" + myGame.Score (1), Color.White, "GameFont", 840, 30);
 			// Draw the top card
 			Card top = myGame.TopCard;
 			if (top != null)
