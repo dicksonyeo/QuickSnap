@@ -9,7 +9,9 @@ namespace CardGames
         public static void LoadResources()
         {
             Bitmap cards;
+
             cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
+			SwinGame.LoadFontNamed ("GameFont", "Chunkfive.otf", 24);
             SwinGame.BitmapSetCellDetails (cards, 82, 110, 13, 5, 53);      // set the cells in the bitmap to match the cards
         }
 
@@ -47,6 +49,7 @@ namespace CardGames
 		private static void DrawGame(Snap myGame)
 		{
 			SwinGame.DrawBitmap("cardsBoard.png", 0, 0);
+			SwinGame.DrawText ("" + myGame.Score (0), Color.White, "GameFont", 0, 30);
 
 			// Draw the top card
 			Card top = myGame.TopCard;
@@ -84,6 +87,7 @@ namespace CardGames
             //Open the game window
             SwinGame.OpenGraphicsWindow("Snap!", 860, 500);
 
+			
 			//Load the card images and set their cell details
             LoadResources();
             
